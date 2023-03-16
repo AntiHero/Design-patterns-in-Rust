@@ -7,12 +7,12 @@ impl Singleton {
         Singleton { magic: 0 }
     }
 
-    fn get_data(&self) -> i32 {
+    fn get_magic(&self) -> i32 {
         self.magic
     }
 
-    fn set_data(&mut self, data: i32) {
-        self.magic = data;
+    fn set_magic(&mut self, magic: i32) {
+        self.magic = magic;
     }
 }
 
@@ -28,11 +28,11 @@ fn main() {
   let instance1 = get_instance();
   let instance2 = get_instance();
 
-  assert_eq!(instance1.get_data(), 0);
-  assert_eq!(instance2.get_data(), 0);
+  assert_eq!(instance1.get_magic(), 0);
+  assert_eq!(instance2.get_magic(), 0);
 
-  instance1.set_data(42);
+  instance1.set_magic(42);
 
-  assert_eq!(instance1.get_data(), 42);
-  assert_eq!(instance2.get_data(), 42);
+  assert_eq!(instance1.get_magic(), 42);
+  assert_eq!(instance2.get_magic(), 42);
 }
